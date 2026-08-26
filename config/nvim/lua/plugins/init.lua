@@ -1,3 +1,0 @@
--- require("plugins.mini")
--- require("plugins.sidekick")
--- require("plugins.terminal")

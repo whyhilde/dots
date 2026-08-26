@@ -1,4 +1,4 @@
-vim.pack.add({ "https://github.com/nvim-treesitter/nvim-treesitter" })
+-- vim.pack.add({ "https://github.com/nvim-treesitter/nvim-treesitter" })
 
 require("nvim-treesitter").setup()
 
@@ -27,24 +27,24 @@ require("nvim-treesitter").setup()
 -- })
 
 require("nvim-treesitter").install({
+  "lua",
+  "markdown",
   "bash",
-  -- "c",
-  -- "cpp",
+  "python",
+  "c",
+  "cpp",
+  "rust",
+  "toml",
   -- "css",
-  "dockerfile",
-  "git_config",
-  "gitignore",
+  -- "dockerfile",
+  -- "git_config",
+  -- "gitignore",
   -- "go",
   -- "gomod",
   -- "gosum",
   -- "gotmpl",
   -- "gowork",
   -- "html",
-  "lua",
-  "markdown",
-  "python",
-  -- "rust",
-  "toml",
   -- "zig",
 })
 

@@ -1,6 +1,3 @@
-vim.pack.add({ "https://github.com/nvim-mini/mini.nvim" })
-
-
 require("mini.ai").setup({
   custom_textobjects = nil,
   mappings = {
@@ -35,6 +32,17 @@ require("mini.comment").setup({
 
 
 require("mini.extra").setup()
+
+
+require("mini.icons").setup({
+  style = "glyph",
+  filetype = {
+    c = { glyph = "", hl = "MiniIconsBlue", },
+    cpp = { glyph = "", hl = "MiniIconsBlue", },
+  },
+})
+
+require("mini.icons").mock_nvim_web_devicons()
 
 
 require("mini.pairs").setup({
@@ -102,15 +110,16 @@ require("mini.pick").setup({
 })
 
 local map = vim.keymap.set
-map("n", "<leader>ff", "<cmd>Pick files<cr>", { desc = "find files" })
-map("n", "<leader>fb", "<cmd>Pick buffers<cr>", { desc = "find buffers" })
-map("n", "<leader>ft", "<cmd>Pick grep_live<cr>", { desc = "find text" })
-map("n", "<leader>fd", "<cmd>Pick diagnostic<cr>", { desc = "find diagnostic" })
-map("n", "<leader>fp", "<cmd>Pick hipatterns<cr>", { desc = "find todo" })
-map("n", "<leader>fs", "<cmd>Pick colorschemes<cr>", { desc = "find colorschemes" })
-map("n", "<leader>fgb", "<cmd>Pick git_branches<cr>", { desc = "find git branches" })
-map("n", "<leader>fgc", "<cmd>Pick git_commits<cr>", { desc = "find git commits" })
-map("n", "<leader>fgf", "<cmd>Pick git_files<cr>", { desc = "find git files" })
+map("n", "<leader>ff", "<cmd>Pick files<cr>")
+map("n", "<leader>fb", "<cmd>Pick buffers<cr>")
+map("n", "<leader>fe", "<cmd>Pick explorer<cr>")
+map("n", "<leader>ft", "<cmd>Pick grep_live<cr>")
+map("n", "<leader>fd", "<cmd>Pick diagnostic<cr>")
+map("n", "<leader>fp", "<cmd>Pick hipatterns<cr>")
+map("n", "<leader>fs", "<cmd>Pick colorschemes<cr>")
+map("n", "<leader>fgb", "<cmd>Pick git_branches<cr>")
+map("n", "<leader>fgc", "<cmd>Pick git_commits<cr>")
+map("n", "<leader>fgf", "<cmd>Pick git_files<cr>")
 
 
 require("mini.starter").setup({
@@ -121,5 +130,25 @@ require("mini.starter").setup({
   footer = "",
   content_hooks = nil,
   query_updaters = "abcdefghijklmnopqrstuvwxyz0123456789_-.",
+  silent = true,
+})
+
+
+require("mini.surround").setup({
+  custom_surroundings = nil,
+  highlight_duration = 500,
+  mappings = {
+    add = "sa",
+    delete = "sd",
+    find = "sf",
+    find_left = "sF",
+    highlight = "sh",
+    replace = "sr",
+    suffix_last = "l",
+    suffix_next = "n",
+  },
+  n_lines = 20,
+  respect_selection_type = false,
+  search_method = "cover",
   silent = true,
 })

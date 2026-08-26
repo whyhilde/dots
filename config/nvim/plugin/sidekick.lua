@@ -1,55 +1,57 @@
-vim.pack.add({ "https://github.com/folke/sidekick.nvim" })
-
-require("sidekick").setup({
-  cli = {
-    watch = true,
-    win = {
-      config = function(terminal) end,
-      wo = {},
-      bo = {},
-      layout = "float",
-      float = {
-        width = 0.9,
-        height = 0.9,
-      },
-      split = {
-        width = 60,
-        height = 20,
-      },
-    },
-    prompts = {
-      changes = "Can you review my changes?",
-      diagnostics = "Can you help me fix the diagnostics in {file}?\n{diagnostics}",
-      diagnostics_all = "Can you help me fix these diagnostics?\n{diagnostics_all}",
-      document = "Add documentation to {function|line}",
-      explain = "Explain {this}",
-      fix = "Can you fix {this}?",
-      optimize = "How can {this} be optimized?",
-      review = "Can you review {file} for any issues or improvements?",
-      tests = "Can you write tests for {this}?",
-      buffers = "{buffers}",
-      file = "{file}",
-      line = "{line}",
-      position = "{position}",
-      quickfix = "{quickfix}",
-      selection = "{selection}",
-      ["function"] = "{function}",
-      class = "{class}",
-    },
-  },
-})
-
-local map = vim.keymap.set
--- map("n", "<tab>", function() if not require("sidekick").nes_jump_or_apply() then
---   return "<tab>" end end, { desc = "goto/apply next edit suggestion" })
-map({ "n", "t", "i", "x" }, "<c-.>", function() require("sidekick.cli").toggle({ name = "opencode", focus = true }) end, { desc = "sidekick toggle cli" })
--- map("n", "<leader>aa", function() require("sidekick.cli").toggle() end, { desc = "sidekick toggle cli" })
---     {
---       "<leader>ad",
---       function() require("sidekick.cli").close() end,
---       desc = "Detach a CLI Session",
+-- vim.pack.add({ "https://github.com/folke/sidekick.nvim" })
+--
+-- require("sidekick").setup({
+--   cli = {
+--     watch = true,
+--     win = {
+--       config = function(terminal) end,
+--       wo = {},
+--       bo = {},
+--       layout = "float",
+--       float = {
+--         width = 0.9,
+--         height = 0.9,
+--       },
+--       split = {
+--         width = 60,
+--         height = 20,
+--       },
 --     },
-map({ "n", "x" }, "<leader>at", function() require("sidekick.cli").send({ msg = "{this}" }) end, { desc = "send this" })
-map("n", "<leader>af", function() require("sidekick.cli").send({ msg = "{file}" }) end, { desc = "send file" })
-map("x", "<leader>av", function() require("sidekick.cli").send({ msg = "{selection}" }) end, { desc = "send visual selection" })
-map({ "n", "x" }, "<leader>ap", function() require("sidekick.cli").prompt() end, { desc = "sidekick select prompt" })
+--     prompts = {
+--       changes = "Can you review my changes?",
+--       diagnostics = "Can you help me fix the diagnostics in {file}?\n{diagnostics}",
+--       diagnostics_all = "Can you help me fix these diagnostics?\n{diagnostics_all}",
+--       document = "Add documentation to {function|line}",
+--       explain = "Explain {this}",
+--       fix = "Can you fix {this}?",
+--       optimize = "How can {this} be optimized?",
+--       review = "Can you review {file} for any issues or improvements?",
+--       tests = "Can you write tests for {this}?",
+--       buffers = "{buffers}",
+--       file = "{file}",
+--       line = "{line}",
+--       position = "{position}",
+--       quickfix = "{quickfix}",
+--       selection = "{selection}",
+--       ["function"] = "{function}",
+--       class = "{class}",
+--     },
+--   },
+-- })
+--
+-- local map = vim.keymap.set
+-- -- map("n", "<tab>", function() if not require("sidekick").nes_jump_or_apply() then
+-- --   return "<tab>" end end, { desc = "goto/apply next edit suggestion" })
+-- map({ "n", "t", "i", "x" }, "<c-.>", function() require("sidekick.cli").toggle({ name = "opencode", focus = true }) end,
+--   { desc = "sidekick toggle cli" })
+-- -- map("n", "<leader>aa", function() require("sidekick.cli").toggle() end, { desc = "sidekick toggle cli" })
+-- --     {
+-- --       "<leader>ad",
+-- --       function() require("sidekick.cli").close() end,
+-- --       desc = "Detach a CLI Session",
+-- --     },
+-- map({ "n", "x" }, "<leader>at", function() require("sidekick.cli").send({ msg = "{this}" }) end, { desc = "send this" })
+-- map("n", "<leader>af", function() require("sidekick.cli").send({ msg = "{file}" }) end, { desc = "send file" })
+-- map("x", "<leader>av", function() require("sidekick.cli").send({ msg = "{selection}" }) end,
+--   { desc = "send visual selection" })
+-- map({ "n", "x" }, "<leader>ap", function() require("sidekick.cli").prompt() end, { desc = "sidekick select prompt" })

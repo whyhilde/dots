@@ -9,7 +9,7 @@ zoxide init fish | source
 # alias pmu "doas pacman -Syu"
 # alias pmr "doas pacman -R"
 alias hs "history | rg"
-alias n "NVIM_APPNAME=nvim2 nvim"
+alias n "NVIM_APPNAME=nvim3 nvim"
 alias dn "doas nvim"
 alias ff "fastfetch"
 alias c "clear"
@@ -26,5 +26,5 @@ if status is-interactive
   alias cd "z"
   alias ls "eza --color --icons --group-directories-first --no-quotes"
   alias ll "eza -la --group-directories-first --color --icons --git --no-filesize --time-style \"+%d %b %Y\" --no-quotes"
-  alias cat "bat --theme Catppuccin\ Mocha --color always --style full"
+  alias cat "bat --theme Catppuccin\ Mocha"
 end

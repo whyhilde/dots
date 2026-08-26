@@ -1,2 +1,4 @@
-require("configs")
+require("colors")
+require("mappings")
+require("options")
 require("plugins")
