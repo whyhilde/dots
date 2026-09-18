@@ -31,6 +31,40 @@ require("mini.comment").setup({
 })
 
 
+require("mini.completion").setup({
+  delay = {
+    completion = 100,
+    info = 100,
+    signature = 50,
+  },
+  window = {
+    info = {
+      height = 8,
+      width = 80,
+      border = nil,
+    },
+    signature = {
+      height = 8,
+      width = 80,
+      border = nil,
+    },
+  },
+  lsp_completion = {
+    source_func = "completefunc",
+    auto_setup = true,
+    process_items = nil,
+    snippet_insert = nil,
+  },
+  fallback_action = "<c-n>",
+  mappings = {
+    force_twostep = "<c-space>",
+    force_fallback = "<a-space>",
+    scroll_down = "<c-j>",
+    scroll_up = "<c-k>",
+  },
+})
+
+
 require("mini.extra").setup()
 
 
@@ -43,6 +77,22 @@ require("mini.icons").setup({
 })
 
 require("mini.icons").mock_nvim_web_devicons()
+
+
+require("mini.jump").setup({
+  mappings = {
+    forward = "f",
+    backward = "F",
+    forward_till = "t",
+    backward_till = "T",
+    repeat_jump = ";",
+  },
+  delay = {
+    highlight = 250,
+    idle_stop = 10000000,
+  },
+  silent = true,
+})
 
 
 require("mini.pairs").setup({

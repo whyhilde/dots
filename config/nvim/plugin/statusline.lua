@@ -1,10 +1,39 @@
 local theme = {
   normal = {
     a = {
+      bg = "#cba6f7",
+      fg = "#181825",
+    },
+    b = {
       bg = "#181825",
       fg = "#cdd6f4",
     },
   },
+  insert = {
+    a = {
+      bg = "#a6e3a1",
+      fg = "#181825",
+    },
+    -- b = {bg = colors.lightgray, fg = colors.white},
+  },
+  visual = {
+    a = {bg = "#89b4fa", fg = "#181825",},
+    -- b = {bg = colors.lightgray, fg = colors.white},
+  },
+  replace = {
+    a = {bg = "#f38ba8", fg = "#181825", gui = 'bold'},
+    -- b = {bg = colors.lightgray, fg = colors.white},
+  },
+  command = {
+    a = {bg = "#f9e2af", fg = "#181825", gui = 'bold'},
+    -- b = {bg = colors.lightgray, fg = colors.white},
+  },
+  -- normal = {
+  --   a = {
+  --     bg = "#181825",
+  --     fg = "#cdd6f4",
+  --   },
+  -- },
 }
 
 
@@ -27,6 +56,8 @@ require("lualine").setup({
       {
         "mode",
       },
+    },
+    lualine_b = {
       {
         "filename",
         file_status = false,
@@ -64,11 +95,9 @@ require("lualine").setup({
         always_visible = false,
       },
     },
-    lualine_b = {},
     lualine_c = {},
     lualine_x = {},
-    lualine_y = {},
-    lualine_z = {
+    lualine_y = {
       {
         "branch",
         icon = "git",
@@ -83,5 +112,8 @@ require("lualine").setup({
         },
       },
     },
+    lualine_z = {},
   },
 })
+
+-- require('modicator').setup()
