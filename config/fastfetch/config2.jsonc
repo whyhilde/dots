@@ -1,0 +1,117 @@
+{
+  "logo": {
+    // "source": "arch",
+    "padding": {
+      "top": 0,
+      "left": 0,
+      "bottom": 0,
+      "right": 3,
+    },
+  },
+  "display": {
+    "separator": " ",
+    "size": {
+      "maxPrefix": "GB",
+      "binaryPrefix": "jedec",
+      "ndigits": 1,
+      "spaceBeforeUnit": "always",
+    },
+  },
+  "modules": [
+    {
+      "type": "title",
+    },
+    // {
+    //   "type": "separator",
+    //   "string": "-",
+    // },
+    {
+      "type": "custom",
+      "format": "{#black}├── {#keys}system/",
+    },
+    {
+      "type": "os",
+      "key": "{#black}│   ├── {#keys}os:",
+      "format": "{pretty-name}",
+    },
+    {
+      "type": "kernel",
+      "key": "{#black}│   ├── {#keys}kernel:",
+      "format": "{release}",
+    },
+    {
+      "type": "packages",
+      "key": "{#black}│   ├── {#keys}pkgs:",
+    },
+    {
+      "type": "shell",
+      "key": "{#black}│   ├── {#keys}shell:",
+    },
+    {
+      "type": "terminal",
+      "key": "{#black}│   ├── {#keys}term:",
+    },
+    {
+      "type": "initsystem",
+      "key": "{#black}│   ├── {#keys}init:",
+    },
+    {
+      "type": "de",
+      "key": "{#black}│   └── {#keys}de:",
+    },
+    {
+      "type": "custom",
+      "format": "{#black}├── {#keys}hardware/",
+    },
+    {
+      "type": "display",
+      "compactType": "original-with-refresh-rate",
+      "key": "{#black}│   ├── {#keys}display:",
+    },
+    {
+      "type": "cpu",
+      "key": "{#black}│   ├── {#keys}cpu:",
+      "format": "{name}",
+    },
+    {
+      "type": "gpu",
+      "key": "{#black}│   ├── {#keys}gpu:",
+      "format": "{name}",
+    },
+    {
+      "type": "memory",
+      "key": "{#black}│   ├── {#keys}memory:",
+      "format": "{used} | {total}",
+    },
+    // {
+    //   "type": "swap",
+    // },
+    {
+      "type": "disk",
+      "folders": "/",
+      "key": "{#black}│   └── {#keys}disk:",
+      "format": "{size-used} | {size-total} ({filesystem})",
+    },
+    {
+      "type": "custom",
+      "format": "{#black}├── {#keys}temporal/",
+    },
+    {
+      "type": "datetime",
+      "key": "{#black}│   ├── {#keys}time:",
+    },
+    {
+      "type": "uptime",
+      "key": "{#black}│   ├── {#keys}uptime:",
+      "format": "{?days}{days}d {?}{?hours}{hours}h {?}{minutes}m",
+    },
+    // {
+    //   "type": "locale",
+    // },
+    // "break",
+    // {
+    //   "type": "colors",
+    //   "symbol": "block",
+    // }
+  ]
+}

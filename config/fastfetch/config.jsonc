@@ -1,0 +1,93 @@
+{
+  "logo": {
+    // "source": "arch",
+    "padding": {
+      "top": 0,
+      "left": 0,
+      "bottom": 0,
+      "right": 3,
+    },
+  },
+  "display": {
+    "separator": ": ",
+    "size": {
+      "maxPrefix": "GB",
+      "binaryPrefix": "jedec",
+      "ndigits": 1,
+      "spaceBeforeUnit": "always",
+    },
+  },
+  "modules": [
+    {
+      "type": "title",
+    },
+    {
+      "type": "separator",
+      "string": "-",
+    },
+    {
+      "type": "os",
+      "format": "{pretty-name}",
+    },
+    {
+      "type": "kernel",
+      "format": "{release}",
+    },
+    {
+      "type": "uptime",
+      "format": "{?days}{days}d {?}{?hours}{hours}h {?}{minutes}m",
+    },
+    {
+      "type": "packages",
+    },
+    {
+      "type": "shell",
+    },
+    {
+      "type": "initsystem",
+    },
+    {
+      "type": "display",
+      "compactType": "original-with-refresh-rate",
+      "key": "Resolution",
+    },
+    {
+      "type": "de",
+    },
+    {
+      "type": "terminal",
+    },
+    {
+      "type": "cpu",
+      "format": "{name}",
+    },
+    {
+      "type": "gpu",
+      "format": "{name}",
+    },
+    {
+      "type": "memory",
+      "format": "{used} | {total}",
+    },
+    // {
+    //   "type": "swap",
+    // },
+    {
+      "type": "disk",
+      "folders": "/",
+      "key": "Disk",
+      "format": "{size-used} | {size-total} ({filesystem})",
+    },
+    // {
+    //   "type": "datetime",
+    // },
+    {
+      "type": "locale",
+    },
+    "break",
+    {
+      "type": "colors",
+      "symbol": "block",
+    }
+  ]
+}
