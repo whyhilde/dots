@@ -3,6 +3,11 @@ starship init fish | source
 zoxide init fish | source
 # fzf --fish | source
 
+# function starship_transient_prompt_func
+#   echo -e && starship module character
+# end
+# starship init fish | source
+# enable_transience
 
 # aliases
 # alias pmi "doas pacman -S"
